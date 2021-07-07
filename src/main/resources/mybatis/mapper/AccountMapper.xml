@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.yh.initjpaandmybatis.account.repository.AccountMapper">
+    <select id="mybatisFindAccountById" resultType="map" parameterType="string">
+        SELECT * FROM account
+        WHERE id = #{id}
+    </select>
+
+    <select id="mybatisFindAllAccount" resultType="map">
+        SELECT * FROM account
+    </select>
+
+    <select id="aliasFindAccountById" resultType="accountSimple" parameterType="string">
+        SELECT * FROM account
+        WHERE id = #{id}
+    </select>
+
+    <select id="aliasFindAllAccount" resultType="accountSimple">
+        SELECT * FROM account
+    </select>
+
+</mapper>

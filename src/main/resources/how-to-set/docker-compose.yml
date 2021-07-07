@@ -1,0 +1,23 @@
+#https://docs.docker.com/compose/compose-file/compose-versioning/
+#파일 생성 touch docker-compose.yml
+#파일 수정 vi docker-compose.yml
+#아래 코드 복사 붙이기
+
+version:  "3"
+services:
+  mysql:
+    image: mysql:8.0.17
+    container_name: yh_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      TZ: "Asia/Seoul"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+#      - --default-time-zone=+09:00
+#    volumes:
+
+# 저장종료 esc -> :wq
+# 컨테이너 띄우기 docker-compose up -d

@@ -1,0 +1,46 @@
+spring:
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    #jdbc:log4 를 위한 드라이버 미사용시 없애도 됨
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://192.168.99.100:3306/woo?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    #원래 url은 아래것, 위는 jdbc:log4
+    #url: jdbc:mysql://192.168.99.100:3306/woo?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: yh
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_batch_fetch_size: 500
+        show_sql: false
+        format_sql: true
+    show-sql: true
+
+logging.level:
+  org:
+    hibernate:
+      SQL: debug
+      type.descriptor.sql.BasicBinder: trace
+  jdbc:
+    connection: OFF
+    sqlonly: OFF
+    sqltiming: DEBUG
+    audit: OFF
+    resultset: OFF
+    resultsettable: INFO
+
+mybatis:
+  mapper-locations:
+    - classpath:mybatis/mapper/*.xml
+  #http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/ 설정 참고
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+  type-aliases-package: me.yh.initjpaandmybatis

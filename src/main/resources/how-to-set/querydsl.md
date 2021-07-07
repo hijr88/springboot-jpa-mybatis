@@ -1,0 +1,6 @@
+- gradle 5와 6의 설정 차이 
+  - https://jojoldu.tistory.com/538
+- gradle 와 Querydsl 바쁜 현대 개발자들을 위한 요약
+  - http://honeymon.io/tech/2020/07/09/gradle-annotation-processor-with-querydsl.html
+- 공식 플러그인
+  - https://plugins.gradle.org/plugin/com.ewerk.gradle.plugins.querydsl
